@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+<h:head>
+  <title><ui:insert name="title">JSF</ui:insert></title>
+</h:head>
+
+<body>
+
+<div id="header">
+    <ui:insert name="header">
+    	<p:panel>
+	    	<p:dock position="top" >
+				<p:menuitem value="JSF" icon="../resources/jsf.png" url="volgende.xhtml"/>
+				<p:menuitem value="OpenID" icon="../resources/openid.png" url="portaal.xhtml"/>
+				<p:menuitem value="OpenID4Java" icon="../resources/openid4java.png" url="http://code.google.com/p/openid4java/" target="_blank"/>
+				<p:menuitem value="PrimeFaces" icon="../resources/primefaces.png" url="http://www.primefaces.org" target="_blank"/>
+				<p:menuitem value="GitHub" icon="../resources/git.png" url="http://developer.github.com" target="_blank" />
+			</p:dock>
+			<!--  include your header file or uncomment the include below and create header.xhtml in this directory -->
+	    	<!-- <ui:include src="header.xhtml"/> -->
+    	</p:panel>
+    </ui:insert>
+</div>
+
+
+<div id="content">
+  <ui:insert name="content">
+    	Dit is de content uit template.xhtml
+    	<!--  include your content file or uncomment the include below and create content.xhtml in this directory -->
+	  	<!-- <div> -->
+    	<!-- <ui:include src="content.xhtml"/> -->  
+    	<!-- </div> -->
+  </ui:insert>
+</div>
+
+<div id="footer" style="padding-top: 100px;">
+  <ui:insert name="footer">
+    	<ui:include src="footer.xhtml"/>
+  </ui:insert>
+</div>
+
+</body>
+
+</html>

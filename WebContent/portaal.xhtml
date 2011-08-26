@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rvv="http://java.sun.com/jsf/composite/components"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+    </h:head>
+    <h:body>
+        <ui:composition template="template.xhtml">
+	        <ui:define name="content">
+				<p:messages/>
+				<br/>
+		        <h:form>
+		        	<rvv:openIdField label1="Open ID Identifier: " openidaction="#{openid.login}">
+			        	<f:validator validatorId="urlvalidator" for="openidtextfield"/>
+		        	</rvv:openIdField>
+				</h:form>
+		        <br/>
+		        <p:panel>
+		        	<h:outputLabel>rvvoorthuizen.pip.verisignlabs.com</h:outputLabel> <br/>
+		        	<h:outputLabel>ronaldvanvoorthuizen.hyves.nl</h:outputLabel>
+		        </p:panel>
+	        </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

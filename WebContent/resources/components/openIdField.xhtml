@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsf/composite"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+	<c:interface>
+		<c:attribute name="label1" />
+		<c:attribute method-signature="java.lang.String action()" name="openidaction" />
+		<c:editableValueHolder name="openidtextfield" targets="openid_identifier"/>
+	</c:interface>
+
+	<c:implementation>
+		<p:panel>
+		    <h:outputLabel for="openid_identifier" value="#{cc.attrs.label1}" />
+		    <p:inputText id="openid_identifier" 
+		    	value="#{openid.userSuppliedId}" 
+		       	style="background: url(http://openid.net/login-bg.gif) no-repeat; 
+		       	padding-left: 18px; 
+		       	background-position: 0 50%;" size="50"/>
+		    <p:commandButton action="#{cc.attrs.openidaction}" value="Login" id="openidButton"/>
+	    </p:panel>
+	</c:implementation>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <title>JSF</title>
+    </h:head>
+
+	<ui:composition template="template.xhtml">
+	    <ui:define name="content">
+		    <div align="left" id="input">
+		    <p:panel>
+		    	<h1><h:outputLabel value="#{msg['message.welcomemessage']}" /></h1>
+		       	<h:form>
+			       <p:inputText value="#{naamBean.message}"/>
+			       <p:inputText value="#{naamBean.message2}"/>
+			       <p:commandButton value="#{msg['label.submitbutton']}" action="volgende.xhtml" ajax="FALSE"/>
+			       <p:commandButton value="#{msg['label.openidbutton']}" action="portaal.xhtml" ajax="FALSE"/>
+			    </h:form>
+			</p:panel>
+			</div>
+	    </ui:define>
+	</ui:composition>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rvv="http://java.sun.com/jsf/composite/components">
+
+<ui:composition template="template.xhtml">
+
+	<ui:define name="content">
+		<h1>Welkom op volgende.xhtml, #{naamBean.message} #{naamBean.message2}</h1>
+		<rvv:dubbelKnop label1="#{naamBean.message}" label2="#{andereBean.message}" action="home.xhtml"/>
+		<div align="center">
+			<h:panelGrid bgcolor="#{layoutBean.tableBackground}" columns="3" border="1" >
+				<ui:repeat var="namen" value="#{naamBean.namen}">
+						#{namen}
+				</ui:repeat>
+				<f:facet name="header">
+					<h:outputText value="Header" />
+				</f:facet>
+					<h:outputText value="nog een stukje tekst" />
+					<h:graphicImage value="#{naamBean.fotoUrl}" width="#{naamBean.fotoWidth}" height="#{naamBean.fotoHeight}"/>			
+			</h:panelGrid>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>
+
