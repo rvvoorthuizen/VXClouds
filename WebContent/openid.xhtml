@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+    <h:head>
+    </h:head>
+    <body>
+    	<ui:composition template="template.xhtml">
+	    	<ui:define name="content">
+	    		<p:panel id="panel" toggleable="true" header="Attributen" >
+	    			<div align="center">
+		    			<h:form>
+			    	    	<h:inputHidden value="#{openid.onLoad}" />
+		 					<p:tabView>
+		 						<p:tab title="#{msg['label.openidheader']}">
+			 						<h:panelGrid bgcolor="#{layoutBean.tableBackground}" columns="2" border="1" >
+						 				<h:graphicImage value="#{openid.oiattr.openIdAvatar}"/>
+						 				<br/>
+						            	<h:outputLabel for="userSuppliedId" value="#{msg['label.userSuppliedId']}" />
+						            	<h:outputText id="userSuppliedId" value="#{openid.oiattr.userSuppliedId}" />
+						            	<h:outputLabel for="fullname" value="#{msg['label.fullName']}" />
+						            	<h:outputText id="fullname" value="#{openid.oiattr.openIdFullName}" />
+						            	<h:outputLabel for="firstname" value="#{msg['label.firstName']}" />
+						            	<h:outputText id="firstname" value="#{openid.oiattr.openIdFirstName}" />
+						            	<h:outputLabel for="lastname" value="#{msg['label.lastName']}" />
+						            	<h:outputText id="lastname" value="#{openid.oiattr.openIdLastName}" />
+						            	<h:outputLabel for="nickname" value="#{msg['label.nickName']}" />
+						            	<h:outputText id="nickname" value="#{openid.oiattr.openIdNickName}" />
+						            	<h:outputLabel for="birthday" value="#{msg['label.birthday']}" />
+						            	<h:outputText id="birthday" value="#{openid.oiattr.openIdBirthday}" />
+						            	<h:outputLabel for="gender" value="#{msg['label.gender']}" />
+						            	<h:outputText id="gender" value="#{openid.oiattr.openIdGender}" />
+						            	<h:outputLabel for="postcode" value="#{msg['label.postcode']}" />
+						            	<h:outputText id="postcode" value="#{openid.oiattr.openIdPostcode}" />
+						            	<h:outputLabel for="country" value="#{msg['label.country']}" />
+						            	<h:outputText id="country" value="#{openid.oiattr.openIdCountry}" />
+						            	<h:outputLabel for="language" value="#{msg['label.language']}" />
+						            	<h:outputText id="language" value="#{openid.oiattr.openIdLanguage}" />
+						            	<h:outputLabel for="timezone" value="#{msg['label.timezone']}" />
+						            	<h:outputText id="timezone" value="#{openid.oiattr.openIdTimezone}" />
+						            	<h:outputLabel for="email" value="#{msg['label.email']}" />
+						            	<h:outputText id="email" value="#{openid.oiattr.openIdEmail}" />
+						            	<h:outputLabel for="verified" value="#{msg['label.verifiedid']}" />
+						            	<h:outputText id="verified" value="#{openid.oiattr.verifiedId}" />
+			            			</h:panelGrid>
+			            		</p:tab>
+			            		
+			            		<p:tab title="#{msg['label.ldapheader']}">
+			            			<h:panelGrid bgcolor="#{layoutBean.tableBackground}" columns="2" border="1">
+				                 		<h:outputLabel for="ldapvoornaam" value="#{msg['label.ldapvoornaam']}" />
+						            	<h:outputText id="ldapvoornaam" value="#{openid.ldapattr.ldap_voornaam}" />
+										<h:outputLabel for="ldapachternaam" value="#{msg['label.ldapachternaam']}" />
+						            	<h:outputText id="ldapachternaam" value="#{openid.ldapattr.ldap_achternaam}" />
+						            	<h:outputLabel for="ldapdistname" value="#{msg['label.ldapdistname']}" />
+						            	<h:outputText id="ldapdistname" value="#{openid.ldapattr.ldap_distinguishedName}" />
+						            	<h:outputLabel for="ldapmemberof" value="#{msg['label.ldapmemberof']}" />
+						            	<h:outputText id="ldapmemberof" value="#{openid.ldapattr.ldap_memberOf}" />
+						            	<h:outputLabel for="ldapwhencreated" value="#{msg['label.ldapwhencreated']}" />
+						            	<h:outputText id="ldapwhencreated" value="#{openid.ldapattr.ldap_whenCreated}" />
+						            	<h:outputLabel for="ldaplastlogon" value="#{msg['label.ldaplastlogon']}" />
+						            	<h:outputText id="ldaplastlogon" value="#{openid.ldapattr.ldap_lastLogon}" />
+						            	<h:outputLabel for="ldapobjectsid" value="#{msg['label.ldapobjectsid']}" />
+						            	<h:outputText id="ldapobjectsid" value="#{openid.ldapattr.ldap_objectSid}" />
+					           		</h:panelGrid>
+					           	</p:tab>
+					           	
+								<p:tab title="#{msg['label.githubheader']}">
+			            			<h:panelGrid bgcolor="#{layoutBean.tableBackground}" columns="2" border="1">
+				                 		<h:outputLabel for="githubtest" value="#{msg['label.githubheader']}" />
+						            	<h:outputText id="githubtest" value="#{openid.ghapter.searchResult}" />
+					           		</h:panelGrid>
+					           	</p:tab>
+					           	
+					           	<!-- <p:tab title="#{msg['label.githubheader']}">
+					           		<h:panelGrid bgcolor="#{layoutBean.tableBackground}" columns="2" border="1">
+				                 		<h:outputLabel for="githubtest" value="#{msg['label.githubheader']}" />
+						            	<h:outputText id="githubtest" value="#{openid.ghapter.searchResult}" /> 
+					           		</h:panelGrid>
+					           		
+					           	</p:tab --> 
+				            </p:tabView>
+	        			</h:form>
+	        		</div>
+	        	</p:panel>
+        	</ui:define>
+   		</ui:composition>
+    </body>
+</html>
